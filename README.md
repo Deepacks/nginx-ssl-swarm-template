@@ -172,7 +172,7 @@ server {
 }
 ```
 
-## 4.4) Add a symbolic link to inside the sites-enabled
+## 4.4) Add a symbolic link inside the sites-enabled
 
 ```
 cd ./conf.d/sites-enabled && \
