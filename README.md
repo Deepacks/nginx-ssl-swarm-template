@@ -166,7 +166,7 @@ server {
         include /etc/nginx/conf.d/ssl.conf;
 
         location / {
-                proxy_pass http://<front_end_container_name>:3000;
+                proxy_pass http://<front_end_container_name>:<front_end_container_port>;
                 include /etc/nginx/conf.d/common_location.conf;
         }
 }
