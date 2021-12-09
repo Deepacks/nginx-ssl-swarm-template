@@ -99,10 +99,10 @@ cp /etc/letsencrypt/live/<domain_name>/fullchain.pem \
 openssl dhparam -out dhparams.pem 4096
 ```
 
-**Copy DHPARAM to NGINX certs folder**
+**Move DHPARAM to NGINX certs folder**
 
 ```
-cp ./dhparams.pem /etc/nginx/certs
+mv ./dhparams.pem /etc/nginx/certs
 ```
 
 Inside /etc/nginx/certs there should now be 3 files:
