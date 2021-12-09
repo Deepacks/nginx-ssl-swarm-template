@@ -46,7 +46,7 @@ rm -rf nginx-ssl-template
 docker container run --name nginx \
     --mount type=bind,source=<path/on/your/host/nginx>,target=/etc/nginx/ \
     -p 80:80 -p 443:443 \
-    --network my_bridge \
+    --network <my_bridge> \
     nginx:latest
 ```
 
