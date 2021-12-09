@@ -25,40 +25,22 @@ docker container run --network my_bridge \
 
 ## 2) Launch NGINX with bind mount
 
-These steps allow a bind mount beteen the nginx config inside the container and an nginx folder on your host:
+These steps allow a bind mount between the nginx config inside the container and an nginx folder on your host:
 
-- Since bind mounts work from host to container we first need to have a working nginx config on our host before binding it.
-- If we bind an empty nginx config folder to a new container the container will copy the empty folder from the host, replacing the valid config.
+### 2.1) Clone NGINX config repo into an nginx folder
 
-### 2.1) Run NGINX container
-
-```
-docker container run --name nginx nginx
-```
-
-### 2.2) Clone NGINX config repo into nginx folder
+_This requires you to configure an ssh key on your host. Check out: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account_
 
 ```
-mkdir temp && cd temp
-git clone https://github.com/Dying-Lately/nginx
-mv -r ./nginx/* /etc/nginx
-cd .. && rm -rf temp
+cd <path/on/your/host>
+mkdir nginx
+git clone git@github.com:Deepacks/nginx-ssl-template.git
+mv -r ./nginx-ssl-template/nginx/* ./nginx
+rm -rf nginx-ssl-template
 
 ```
 
-### 2.3) Copy NGINX config from container to host
-
-```
-docker cp <container_name>:/etc/nginx <path/on/your/host>
-```
-
-### 2.4) Remove NGINX container
-
-```
-docker container rm -f nginx
-```
-
-### 2.5) Start NGINX with bind mount
+### 2.2) Start NGINX with bind mount
 
 ```
 docker container run --name nginx \
