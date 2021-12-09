@@ -126,13 +126,13 @@ apt install micro
 ### 4.2) Create front-end config file
 
 ```
-touch .nginx/conf.d/sites-available/fe.conf
+touch ./conf.d/sites-available/fe.conf
 ```
 
 ### 4.3) Edit fe.conf
 
 ```
-micro .nginx/conf.d/sites-available/fe.conf
+micro ./conf.d/sites-available/fe.conf
 ```
 
 - Add (remember to edit with your domain name):
@@ -175,7 +175,7 @@ server {
 ## 4.4) Add a symbolic link to inside the sites-enabled
 
 ```
-cd ./nginx/conf.d/sites-enabled && \
+cd ./conf.d/sites-enabled && \
     ln -s ../sites-available/fe.conf .
 ```
 
