@@ -181,8 +181,6 @@ cd ./conf.d/sites-enabled && \
 
 ## 5) Check nginx config and reload nginx
 
-_Remember to exit container bash before proceding_
-
 ### 5.1) Check nginx config
 
 ```
