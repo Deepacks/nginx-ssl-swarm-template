@@ -69,7 +69,7 @@ apt update
 **Install python3 and pip3**
 
 ```
-apt install python3 python-pip3
+apt install python3 python3-pip
 ```
 
 **Install certbot**
