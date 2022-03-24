@@ -1,0 +1,1 @@
+This is where fullchain.pem and privkey.pem will be placed (www)
