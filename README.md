@@ -228,7 +228,7 @@ Clone repo and prepare nginx folder
 
 ```bash
 git clone https://github.com/Deepacks/nginx-ssl-swarm-template.git
-cd mv nginx-ssl-swarm-template/* nginx/
+mv nginx-ssl-swarm-template/* nginx/
 rm -rf nginx-ssl-swarm-template
 cd nginx
 rm conf.d/sites-available/available.txt \
